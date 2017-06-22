@@ -126,9 +126,10 @@ task 'assets:precompile' => %i(clean update_sc update_godep update_static_files 
 
 directory 'public/files'
 
-desc 'clean up static files in public/'
+desc 'clean up static files'
 task :clean do
   rm_rf('public/files')
+  rm_rf 'lib/travis/build/addons/sauce_connect/sauce_connect.sh'
 end
 
 desc 'update casher'
